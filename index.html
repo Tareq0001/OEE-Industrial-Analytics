@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OEE Industrial Analytics V2 | النمط العسيري التقني المبتكر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="asiri-theme">
+  <!-- Asiri Decorative Heritage Ribbon (شريط القط العسيري العلوي التراثي) -->
+  <div class="asiri-top-border">
+    <div class="qatt-chevron-pattern"></div>
+  </div>
+
+  <div class="ambient-glow glow-gold"></div>
+  <div class="ambient-glow glow-crimson"></div>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="asiri-badge">
+        <span class="asiri-badge-tri">▲</span>
+        <span class="badge-text" data-i18n="badgeEngine">منظومة القط العسيري الهندسية · كفاءة المعدات OEE</span>
+      </div>
+      <h1 class="brand-title">
+        <span class="asiri-gold-text" data-i18n="appTitle">OEE Analytics</span>
+        <span class="title-sub" data-i18n="appSub">النمط العسيري التقني</span>
+      </h1>
+      <p class="brand-desc" data-i18n="appDesc">تحليل الكفاءة الكلية للمعدات، رصد الخسائر الست الكبرى، ومخططات باريتو بنكهة تراثية عسيرية معاصرة</p>
+    </div>
+    
+    <div class="header-right">
+      <div class="asiri-status-box">
+        <span class="asiri-status-label" data-i18n="statusLabel">معيار الجودة:</span>
+        <span class="asiri-status-val" id="worldClassBadge">فئة عالمية</span>
+      </div>
+      <button id="langToggle" class="btn-asiri-sec lang-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span id="langLabel">English</span>
+      </button>
+      <button id="exportReportBtn" class="btn-asiri-prim">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span data-i18n="exportBtn">تصدير تقرير OEE</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Asiri Presets Bar -->
+  <section class="asiri-panel presets-panel">
+    <div class="presets-container">
+      <div class="presets-label-wrapper">
+        <span class="asiri-icon-symbol">❖</span>
+        <span class="preset-label" data-i18n="presetsLabel">السيناريوهات الصناعية الجاهزة:</span>
+      </div>
+      <div class="preset-buttons">
+        <button class="preset-btn active" data-preset="automotive">
+          <span class="preset-tag red">عالمي</span>
+          <span data-i18n="presetAuto">مصانع السيارات (85% OEE عالمي)</span>
+        </button>
+        <button class="preset-btn" data-preset="pharma">
+          <span class="preset-tag green">صيدلة</span>
+          <span data-i18n="presetPharma">الصناعات الدوائية (جودة فائقة، توقفات تعقيم)</span>
+        </button>
+        <button class="preset-btn" data-preset="electronics">
+          <span class="preset-tag gold">تقنية</span>
+          <span data-i18n="presetSMT">الإلكترونيات SMT (سرعة عالية، أعطال ميكروية)</span>
+        </button>
+        <button class="preset-btn" data-preset="mining">
+          <span class="preset-tag blue">تعدين</span>
+          <span data-i18n="presetHeavy">الصناعات الثقيلة والتعدين (صيانة دورية مجهدة)</span>
+        </button>
+      </div>
+
+      <button id="resetDefaultsBtn" class="btn-asiri-ghost">
+        <span data-i18n="resetBtn">إعادة ضبط</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- KPI Cards (المحاريب الهندسية الأربعة) -->
+  <section class="kpi-grid">
+    <div class="kpi-card asiri-card-gold">
+      <div class="card-qatt-corner top-right"></div>
+      <div class="kpi-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="kpi-content">
+        <span class="kpi-label" data-i18n="kpiOEE">الكفاءة الكلية للمعدات OEE</span>
+        <div class="kpi-val" id="kpiOEE">85.0%</div>
+        <span class="kpi-sub" id="kpiOEESub">A × P × Q = المعيار الذهبي</span>
+      </div>
+    </div>
+
+    <div class="kpi-card asiri-card-red">
+      <div class="card-qatt-corner top-right"></div>
+      <div class="kpi-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <div class="kpi-content">
+        <span class="kpi-label" data-i18n="kpiAvail">معدل الإتاحة والجاهزية (A)</span>
+        <div class="kpi-val" id="kpiAvail">90.0%</div>
+        <span class="kpi-sub" data-i18n="kpiAvailSub">زمن التشغيل الفعلي / المخطط</span>
+      </div>
+    </div>
+
+    <div class="kpi-card asiri-card-green">
+      <div class="card-qatt-corner top-right"></div>
+      <div class="kpi-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <div class="kpi-content">
+        <span class="kpi-label" data-i18n="kpiPerf">معدل الأداء والسرعة (P)</span>
+        <div class="kpi-val" id="kpiPerf">95.0%</div>
+        <span class="kpi-sub" data-i18n="kpiPerfSub">الإنتاج الفعلي / الطاقة التصميمية</span>
+      </div>
+    </div>
+
+    <div class="kpi-card asiri-card-blue">
+      <div class="card-qatt-corner top-right"></div>
+      <div class="kpi-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="kpi-content">
+        <span class="kpi-label" data-i18n="kpiQual">معدل الجودة والخلو من العيوب (Q)</span>
+        <div class="kpi-val" id="kpiQual">99.4%</div>
+        <span class="kpi-sub" data-i18n="kpiQualSub">القطع السليمة / إجمالي المنتجات</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Studio Main Layout -->
+  <main class="studio-layout">
+    <!-- Left Column: OEE Radial Gauge & Factors -->
+    <section class="asiri-panel main-gauge-panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title" data-i18n="gaugeTitle">عداد الكفاءة الدائري والمؤشرات الثلاثية</h2>
+          <p class="panel-desc" data-i18n="gaugeDesc">تفكيك الكفاءة التشغيلية OEE لعناصرها الثلاثة مع مؤشر قياس دائري تفاعلي.</p>
+        </div>
+      </div>
+
+      <div class="gauge-wrapper">
+        <canvas id="gaugeCanvas" width="300" height="300"></canvas>
+        <div class="gauge-center-badge">
+          <span class="gcb-label" data-i18n="gaugeCenter">المحصلة</span>
+          <span class="gcb-val" id="gaugeCenterVal">85%</span>
+          <span class="gcb-sub" id="gaugeClassText">عالمي (World Class)</span>
+        </div>
+      </div>
+
+      <div class="factors-sliders">
+        <div class="slider-group">
+          <div class="slider-header">
+            <span class="factor-name color-red" data-i18n="factorAvail">الإتاحة (Availability)</span>
+            <span class="factor-val" id="sliderValAvail">90%</span>
+          </div>
+          <input type="range" id="sliderAvail" min="50" max="100" value="90">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <span class="factor-name color-green" data-i18n="factorPerf">الأداء (Performance)</span>
+            <span class="factor-val" id="sliderValPerf">95%</span>
+          </div>
+          <input type="range" id="sliderPerf" min="50" max="100" value="95">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <span class="factor-name color-blue" data-i18n="factorQual">الجودة (Quality)</span>
+            <span class="factor-val" id="sliderValQual">99%</span>
+          </div>
+          <input type="range" id="sliderQual" min="80" max="100" value="99">
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Column: Visual Charts (Waterfall & Pareto) -->
+    <section class="asiri-panel charts-panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title" data-i18n="chartsTitle">مخططات الشلال والباريتو 80/20</h2>
+          <p class="panel-desc" data-i18n="chartsDesc">تتبع هدر ساعات الوردية خطوة بخطوة وكشف الخسائر المسببة لـ 80% من التوقفات.</p>
+        </div>
+        <div class="view-toggles">
+          <button class="view-btn active" id="btnWaterfall" data-i18n="tabWaterfall">شلال الفقد الزمني</button>
+          <button class="view-btn" id="btnPareto" data-i18n="tabPareto">باريتو 80/20</button>
+        </div>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="analysisCanvas"></canvas>
+      </div>
+
+      <div class="asiri-pattern-divider"></div>
+
+      <div class="loss-summary-bar">
+        <div class="loss-metric">
+          <span class="lm-label" data-i18n="plannedTime">الزمن المخطط:</span>
+          <span class="lm-val">480 دقيقة</span>
+        </div>
+        <div class="loss-metric">
+          <span class="lm-label" data-i18n="netOperating">الزمن الفعال الصافي:</span>
+          <span class="lm-val color-gold" id="netEffectiveVal">408 دقيقة</span>
+        </div>
+        <div class="loss-metric">
+          <span class="lm-label" data-i18n="totalLossTime">إجمالي الهدر الزمني:</span>
+          <span class="lm-val color-red" id="totalLossVal">72 دقيقة</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom Detailed Tabbed Losses (الخسائر الست الكبرى) -->
+  <section class="asiri-panel detailed-section">
+    <div class="tabs-header">
+      <button class="tab-btn active" data-tab="tabAvailLoss">
+        <span class="tab-glyph">▲</span>
+        <span data-i18n="tabLoss1">خسائر الإتاحة (أعطال وإعداد)</span>
+      </button>
+      <button class="tab-btn" data-tab="tabPerfLoss">
+        <span class="tab-glyph">◆</span>
+        <span data-i18n="tabLoss2">خسائر الأداء (توقفات وسرعة)</span>
+      </button>
+      <button class="tab-btn" data-tab="tabQualLoss">
+        <span class="tab-glyph">●</span>
+        <span data-i18n="tabLoss3">خسائر الجودة (هدر وتعديل)</span>
+      </button>
+    </div>
+
+    <div class="tabs-content">
+      <div class="tab-pane active" id="tabAvailLoss">
+        <div class="loss-cards-grid">
+          <div class="loss-card">
+            <div class="loss-title" data-i18n="l1Title">1. أعطال المعدات المفاجئة (Equipment Failures)</div>
+            <p class="loss-desc" data-i18n="l1Desc">التوقفات غير المخططة الناتجة عن تعطل محركات أو تآكل ميكانيكي.</p>
+            <div class="loss-stat" id="l1Val">28 دقيقة / وردية</div>
+          </div>
+          <div class="loss-card">
+            <div class="loss-title" data-i18n="l2Title">2. الإعداد والتجهيز وتغيير القوالب (Setup & Adjustments)</div>
+            <p class="loss-desc" data-i18n="l2Desc">الزمن المستهلك في معايرة الآلات وتغيير خط الإنتاج (فرصة لتطبيق SMED).</p>
+            <div class="loss-stat" id="l2Val">20 دقيقة / وردية</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tabPerfLoss">
+        <div class="loss-cards-grid">
+          <div class="loss-card">
+            <div class="loss-title" data-i18n="l3Title">3. التوقفات الطفيفة والقصيرة (Small Stops)</div>
+            <p class="loss-desc" data-i18n="l3Desc">توقفات متكررة أقل من 5 دقائق بسبب انسداد حساس أو انحشار مواد.</p>
+            <div class="loss-stat" id="l3Val">14 دقيقة / وردية</div>
+          </div>
+          <div class="loss-card">
+            <div class="loss-title" data-i18n="l4Title">4. انخفاض سرعة التشغيل (Reduced Speed)</div>
+            <p class="loss-desc" data-i18n="l4Desc">تشغيل الماكينة بأقل من طاقتها الاسمية بسبب اهتزازات أو تجنب السخونة.</p>
+            <div class="loss-stat" id="l4Val">10 دقيقة / وردية</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tabQualLoss">
+        <div class="loss-cards-grid">
+          <div class="loss-card">
+            <div class="loss-title" data-i18n="l5Title">5. عيوب الإنتاج وبدايات التشغيل (Startup Rejects)</div>
+            <p class="loss-desc" data-i18n="l5Desc">القطع المعيبة التي تنتج أثناء مرحلة الإحماء والاستقرار الحراري للماكينة.</p>
+            <div class="loss-stat" id="l5Val">18 قطعة معيبة</div>
+          </div>
+          <div class="loss-card">
+            <div class="loss-title" data-i18n="l6Title">6. الهدر أثناء العمليات المستقرة (Production Defects)</div>
+            <p class="loss-desc" data-i18n="l6Desc">قطع غير مطابقة للمواصفات تتطلب إعادة تشغيل أو إتلاف كامل.</p>
+            <div class="loss-stat" id="l6Val">12 قطعة معيبة</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-left">
+      <span class="qatt-mini-chevron">▲▼▲</span>
+      <span data-i18n="footerStatus">منصة OEE الصناعية V2 · مستوحاة من الهوية البصرية للقط العسيري التراثي</span>
+    </div>
+    <div class="footer-right">
+      <span>أ. طارق ابوعشي · Tareq0001</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
